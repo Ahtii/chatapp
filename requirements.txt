@@ -1,0 +1,15 @@
+click==7.1.2
+fastapi==0.61.2
+h11==0.11.0
+httptools==0.1.1
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+pkg-resources==0.0.0
+pydantic==1.7.2
+python-dotenv==0.15.0
+PyYAML==5.3.1
+starlette==0.13.6
+uvicorn==0.12.2
+uvloop==0.14.0
+watchgod==0.6
+websockets==8.1
