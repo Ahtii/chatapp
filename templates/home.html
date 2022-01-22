@@ -30,6 +30,7 @@
             position: absolute;
             left: 75%;
             margin-left: 2px;
+            width: 100%;
         }
     </style>
 </head>
@@ -55,8 +56,14 @@
             <h4 class="card-title text-center"> Chat App </h4>
             <hr>
             <form class="form-inline" id="user-form">
-                <input type="text" class="form-control" id="user_input" placeholder="Enter your name">
-                <button id="start" type="submit" class="btn btn-primary">Start Chat</button>
+                <div class="row">
+                    <div class="col-8">
+                        <input type="text" class="form-control" id="user_input" placeholder="Enter your name">
+                    </div>
+                    <div class="col-4">
+                        <button id="start" type="submit" class="btn btn-primary">Start Chat</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
