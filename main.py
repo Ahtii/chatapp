@@ -10,20 +10,28 @@ app = FastAPI()
 # locate templates
 templates = Jinja2Templates(directory="templates")
 
+
 @app.get("/")
 def get_home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
+
 
 @app.get("/chat")
 def get_chat(request: Request):
     return templates.TemplateResponse("chat.html", {"request": request})
 
+
 @app.get("/api/current_user")
 def get_user(request: Request):
     return request.cookies.get("X-Authorization")
 
+
 class RegisterValidator(BaseModel):
     username: str
+
+    class Config:
+        orm_mode = True
+
 
 @app.post("/api/register")
 def register_user(user: RegisterValidator, response: Response):
@@ -45,7 +53,9 @@ class SocketManager:
         for connection in self.active_connections:
             await connection[0].send_json(data)
 
+
 manager = SocketManager()
+
 
 @app.websocket("/api/chat")
 async def chat(websocket: WebSocket):
